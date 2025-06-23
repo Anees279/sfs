@@ -8,20 +8,22 @@ const PropertyFilter = () => {
   return (
     <div className=" p-0 lg:p-8 rounded-xl w-full max-w-screen-2xl mx-auto mt-10">
       {/* Top Button Row */}
-      <div className="flex flex-wrap justify-center space-x-[1px]  sm:px-0  mb-0">
+     <div className="flex justify-center gap-[1px] px-4 sm:px-4 mb-0 overflow-x-auto">
+  {statusOptions.map((status) => (
+    <button
+      key={status}
+      onClick={() => setActiveStatus(status)}
+      className={`whitespace-nowrap px-7 py-3 transition-colors duration-200 ${
+        activeStatus === status
+          ? "bg-white text-black border border-black"
+          : "bg-[#004D42] text-white"
+      }`}
+    >
+      {status}
+    </button>
+  ))}
+</div>
 
-        {statusOptions.map((status) => (
-          <button
-            key={status}
-            onClick={() => setActiveStatus(status)}
-            className={`px-7 py-3  transition-colors duration-200  ${
-              activeStatus === status ? "bg-white text-black border border-black" : "bg-[#004D42] text-white "
-            }`}
-          >
-            {status}
-          </button>
-        ))}
-      </div>
 
       {/* Filter Row with Search in same row */}
       <form className="flex flex-wrap gap-[2px] items-end justify-center md:justify-between w-full bg-white shadow-md p-9  ">

@@ -40,14 +40,15 @@ export const MainHome = () => {
               flexDirection: 'column',
             }}
           >
-            <div className="flex-1 flex flex-col justify-center items-center text-white">
-              <p className="m-3 leading-tight mb-2 text-white text-[22px]">
-                Real Estate Dubai
-              </p>
-              <h1 className="text-[42px] font-normal m-0 leading-tight  justify-center items-center">
-                Properties for Sale & Rent
-              </h1>
-            </div>
+           <div className="flex-1 flex flex-col justify-center items-center text-white mb-40 text-center sm:text-left">
+  <p className="m-3 leading-tight mb-2 text-white text-[22px]">
+    Real Estate Dubai
+  </p>
+  <h1 className="text-[42px] font-normal m-0 leading-tight">
+    Properties for Sale & Rent
+  </h1>
+</div>
+
           </div>
         </div>
       </div>
