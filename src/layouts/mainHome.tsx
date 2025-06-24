@@ -9,6 +9,8 @@ import ImageComponent from '../pages/home/ImageComponen'; // adjust the path if 
 import ExploreCommunities from '../pages/home/exploreCommunities'; // adjust the path if needed
 import HassleFreeExperience from '../pages/home/hasselFreeExperience'; // adjust the path if needed
 import TopTrendingDevelopments from '../pages/home/TopTrendingDevelopments'; // adjust the path if needed
+import PropertyManagementServices from '../pages/home/PropertyManagementServices'; // adjust the path if needed
+import ClientTestimonials from '../pages/home/ClientTestimonials'; // adjust the path if needed
 export const MainHome = () => {
   return (
     <>
@@ -64,6 +66,8 @@ export const MainHome = () => {
       <ExploreCommunities />
       <HassleFreeExperience />
       <TopTrendingDevelopments />
+      <PropertyManagementServices />
+      <ClientTestimonials />
       {/* Add more components as needed */}
     </>
   );
