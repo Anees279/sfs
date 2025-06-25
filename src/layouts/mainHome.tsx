@@ -11,6 +11,9 @@ import HassleFreeExperience from '../pages/home/hasselFreeExperience'; // adjust
 import TopTrendingDevelopments from '../pages/home/TopTrendingDevelopments'; // adjust the path if needed
 import PropertyManagementServices from '../pages/home/PropertyManagementServices'; // adjust the path if needed
 import ClientTestimonials from '../pages/home/ClientTestimonials'; // adjust the path if needed
+import LatestNews from '../pages/home/LatestNews'; // adjust the path if needed
+import NewsletterSubscription from '../pages/home/NewsletterSubscription'; // adjust the path if needed
+import BinayahContactBar from '../pages/home/BinayahContactBar'; // adjust the path if needed
 export const MainHome = () => {
   return (
     <>
@@ -68,6 +71,9 @@ export const MainHome = () => {
       <TopTrendingDevelopments />
       <PropertyManagementServices />
       <ClientTestimonials />
+      <LatestNews />
+      <NewsletterSubscription />
+      <BinayahContactBar />
       {/* Add more components as needed */}
     </>
   );
