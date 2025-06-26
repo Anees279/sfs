@@ -52,7 +52,7 @@ const HassleFreeExperience = () => {
           </div>
 
           {/* Form Section */}
-          <form className="flex-1 bg-white p-8 grid gap-4 text-black shadow-lg max-w-[500px]">
+          <form className="flex-1 bg-white p-4 grid gap-4 text-black shadow-lg max-w-[500px]">
             {/* Form Heading */}
             <div className="col-span-full mb-2">
               <h2 className="text-[25px] font-semibold text-[#5F0F40]">For quick assistance.</h2>

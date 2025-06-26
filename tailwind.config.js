@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // Make sure this matches your file structure
+    "./src/**/*.{js,jsx,ts,tsx}", 
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Aven', 'sans-serif'], // This overrides Tailwind's default font
+      },
+    },
   },
   plugins: [],
 }

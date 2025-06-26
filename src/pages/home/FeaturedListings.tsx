@@ -22,7 +22,7 @@ const FeaturedListings = () => {
       {/* Top Headings */}
       <div className="text-center mb-8">
         <h2 className="text-md uppercase text-gray-600 tracking-widest">OUR FEATURED LISTINGS</h2>
-        <h1 className="text-3xl md:text-4xl font-bold text-[#0F4C5C] mt-2">Exclusive Properties</h1>
+        <h1 className="text-3xl md:text-4xl tracking-widest text-[#0F4C5C] mt-2">Exclusive Properties</h1>
       </div>
 
       {/* Three Columns */}
