@@ -28,7 +28,7 @@ const pages = [
     link: "/for-sale",
     submenu: [
       { name: "Apartments for Sale", link: "/for-sale/apartments" },
-      { name: "Villas", link: "/for-sale/villas" },
+      { name: "Townhouses for Sale", link: "/for-sale/townhouses" },
     ],
   },
   {
