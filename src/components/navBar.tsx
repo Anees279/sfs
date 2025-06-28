@@ -18,14 +18,16 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PhoneIcon from "../assets/images/Container.png"; // Local image
 import img from "../assets/images/7 - Copy 1.png";
 import { keyframes } from "@mui/system";
+import { useIsMainHome } from "../hooks/useIsMainHome";
+
 
 const pages = [
-  { name: "Home", link: "/home" },
+  { name: "Home", link: "/" },
   {
     name: "For Sale",
     link: "/for-sale",
     submenu: [
-      { name: "Apartments", link: "/for-sale/apartments" },
+      { name: "Apartments for Sale", link: "/for-sale/apartments" },
       { name: "Villas", link: "/for-sale/villas" },
     ],
   },
@@ -73,19 +75,24 @@ function HomeHero() {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const [anchorEls, setAnchorEls] = React.useState<Record<string, HTMLElement | null>>({});
- const [openSubmenus, setOpenSubmenus] = React.useState<Record<string, boolean>>(
-  () =>
+  const [anchorEls, setAnchorEls] = React.useState<
+    Record<string, HTMLElement | null>
+  >({});
+  const [openSubmenus, setOpenSubmenus] = React.useState<
+    Record<string, boolean>
+  >(() =>
     pages.reduce((acc, page) => {
       if (page.submenu) acc[page.name] = false;
       return acc;
     }, {} as Record<string, boolean>)
-);
-
+  );
 
   const handleToggleDrawer = () => setDrawerOpen((prev) => !prev);
 
-  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>, pageName: string) => {
+  const handleMenuOpen = (
+    event: React.MouseEvent<HTMLElement>,
+    pageName: string
+  ) => {
     setAnchorEls((prev) => ({ ...prev, [pageName]: event.currentTarget }));
   };
 
@@ -106,13 +113,13 @@ function HomeHero() {
   React.useEffect(() => {
     document.body.style.overflow = drawerOpen ? "hidden" : "auto";
   }, [drawerOpen]);
-
+   const isHome = useIsMainHome();
   return (
     <>
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "transparent",
+           backgroundColor: isHome ? "transparent" : "#0F4C5C",
           color: "black",
           boxShadow: "none",
           justifyContent: "center",
@@ -121,20 +128,41 @@ function HomeHero() {
           pr: { xs: 0, md: 5 },
         }}
       >
-        <Container  maxWidth={false} disableGutters> 
+        <Container maxWidth={false} disableGutters>
           <Toolbar sx={{ width: "100%", alignItems: "center", px: 3 }}>
             <IconButton
               onClick={handleToggleDrawer}
-              sx={{ display: { xs: "flex", md: "none" }, p: 0, color: "#fff", mr: 2, position: "absolute", left: 2 }}
+              sx={{
+                display: { xs: "flex", md: "none" },
+                p: 0,
+                color: "#fff",
+                mr: 2,
+                position: "absolute",
+                left: 2,
+              }}
             >
               <MenuIcon sx={{ color: "#fff" }} />
             </IconButton>
 
-            <Box component="a" href="#" sx={{ display: { xs: "flex" }, alignItems: "left", flexGrow: 1, justifyContent: {
-  xs: "center",   // ✅ center on small screens
-  md: "space-between",  // ✅ normal alignment on medium and larger screens
-} }}>
-              <Box sx={{ height: { xs: "45px", md: "60px" },right: { xs: "50", md: "20px" }}}>
+            <Box
+              component="a"
+              href="#"
+              sx={{
+                display: { xs: "flex" },
+                alignItems: "left",
+                flexGrow: 1,
+                justifyContent: {
+                  xs: "center", // ✅ center on small screens
+                  md: "space-between", // ✅ normal alignment on medium and larger screens
+                },
+              }}
+            >
+              <Box
+                sx={{
+                  height: { xs: "45px", md: "60px" },
+                  right: { xs: "50", md: "20px" },
+                }}
+              >
                 <img
                   src={img}
                   alt="Logo"
@@ -143,7 +171,14 @@ function HomeHero() {
               </Box>
             </Box>
 
-            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2, flexGrow: 1, justifyContent: "flex-end" }}>
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                gap: 2,
+                flexGrow: 1,
+                justifyContent: "flex-end",
+              }}
+            >
               {pages.map((page) => {
                 if (page.submenu) {
                   return (
@@ -175,7 +210,11 @@ function HomeHero() {
                   );
                 }
                 return (
-                  <Button key={page.name} sx={{ color: "#fff" }} href={page.link}>
+                  <Button
+                    key={page.name}
+                    sx={{ color: "#fff" }}
+                    href={page.link}
+                  >
                     {page.name}
                   </Button>
                 );
@@ -185,9 +224,20 @@ function HomeHero() {
                   component="img"
                   src={PhoneIcon}
                   alt="Phone Icon"
-                  sx={{ width: 24, height: 24, animation: `${slide} 1.5s ease-in-out infinite` }}
+                  sx={{
+                    width: 24,
+                    height: 24,
+                    animation: `${slide} 1.5s ease-in-out infinite`,
+                  }}
                 />
-                <Typography sx={{ fontSize: "14px", fontWeight: 500 , color: "#fff",whiteSpace: "nowrap"}}>
+                <Typography
+                  sx={{
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    color: "#fff",
+                    whiteSpace: "nowrap",
+                  }}
+                >
                   +971 54 998 8811
                 </Typography>
               </Box>
@@ -217,20 +267,34 @@ function HomeHero() {
                 fullWidth
                 sx={{ justifyContent: "flex-start", color: "#000" }}
                 onClick={() =>
-                  page.submenu ? handleMobileSubmenuToggle(page.name) : undefined
+                  page.submenu
+                    ? handleMobileSubmenuToggle(page.name)
+                    : undefined
                 }
                 href={!page.submenu ? page.link : undefined}
               >
                 {page.name}
               </Button>
-              <hr style={{ width: "100%", border: "0.1px solid #ddd", marginBottom: 8 }} />
-              {page.submenu && openSubmenus[page.name] &&
+              <hr
+                style={{
+                  width: "100%",
+                  border: "0.1px solid #ddd",
+                  marginBottom: 8,
+                }}
+              />
+              {page.submenu &&
+                openSubmenus[page.name] &&
                 page.submenu.map((sub) => (
                   <Button
                     key={sub.name}
                     href={sub.link}
                     fullWidth
-                    sx={{ justifyContent: "flex-start", color: "#666", pl: 3, fontSize: "13px" }}
+                    sx={{
+                      justifyContent: "flex-start",
+                      color: "#666",
+                      pl: 3,
+                      fontSize: "13px",
+                    }}
                   >
                     → {sub.name}
                   </Button>
@@ -249,7 +313,11 @@ function HomeHero() {
               component="img"
               src={PhoneIcon}
               alt="Phone Icon"
-              sx={{ width: 24, height: 24, animation: `${slide} 1.5s ease-in-out infinite` }}
+              sx={{
+                width: 24,
+                height: 24,
+                animation: `${slide} 1.5s ease-in-out infinite`,
+              }}
             />
             <Typography sx={{ fontSize: "14px", fontWeight: 500 }}>
               +971 54 998 8811

@@ -5,7 +5,7 @@ import bgImage from "../../assets/images/Home Page/3.png"; // adjust the path ba
 const SfsComponent = () => {
   return (
     <div
-      className="px-0 flex flex-col md:flex-row items-center justify-between mx-auto max-w-screen-2xl"
+      className="p-0 px-0 flex flex-col md:flex-row items-center justify-between mx-auto max-w-screen-2xl"
      
     >
       {/* Left Vertical Text with Simulated Border Using Text Shadow - Hidden on small devices */}

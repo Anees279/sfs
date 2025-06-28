@@ -12,12 +12,30 @@ import bedIcon from '../../assets/icons/Margin.png';
 import showerIcon from '../../assets/icons/shawar.png';
 import areaIcon from '../../assets/icons/Component 1.png';
 
-const FeaturedListings = () => {
-  const rentImages = [rent1, rent2, rent3];
-  const saleImages = [sale1, sale2, sale3];
-  const offplanImages = [offplan1, offplan2, offplan3];
+const featuredListings = [
+  {
+    id: "1",
+    title: "Luxury Villa Downtown",
+    description: "High Floor | 01 series | 3 year PP | Service charge",
+    city: "Dubai",
+    area: "Downtown Dubai",
+  },
+  {
+    id: "2",
+    title: "Palm Jumeirah Penthouse",
+    description: "Sea view | Fully furnished | 5 Bedroom",
+    city: "Dubai",
+    area: "Palm Jumeirah",
+  },
+  // more listings...
+];
 
-  return (
+const FeaturedListings = () => {
+const rentImages = [rent1, rent2, rent3];
+const saleImages = [sale1, sale2, sale3];
+const offplanImages = [offplan1, offplan2, offplan3];
+
+return (
     <div className="px-4 py-8  max-w-screen-lg mx-auto">
       {/* Top Headings */}
       <div className="text-center mb-8">
@@ -64,3 +82,5 @@ const FeaturedListings = () => {
 };
 
 export default FeaturedListings;
+
+export { featuredListings };

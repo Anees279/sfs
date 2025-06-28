@@ -8,8 +8,8 @@ body, html, #root {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 .px-4 {
-    padding-left: .4rem;
-    padding-right: .4rem;
+    padding-left: .0rem;
+    padding-right: .0rem;
 }
 .p-6 {
     padding: 0;

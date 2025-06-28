@@ -30,7 +30,7 @@ const RealEstateComponent = () => {
         {/* Paragraph and Button */}
        <div className="md:w-1/3 pr-4 mt-4 md:mt-0 flex flex-col justify-center">
   <p
-   className="font-[500] text-[16.73px] leading-[25px] tracking-[0px] text-left md:text-right align-middle font-inter mb-4 p-2"
+   className="font-[500] text-[16.73px] leading-[25px] tracking-[0px] text-left md:text-right align-middle font-inter mb-4 p-2 md:p-0 px-8"
 
   >
     With over two decades in the market, Binayah Properties has grown from a Dubai-born real estate

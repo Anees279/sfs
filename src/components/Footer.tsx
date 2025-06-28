@@ -5,9 +5,14 @@ import linkedinIcon from '../assets/icons/linkedin.png';
 import instagramIcon from '../assets/icons/insta.png';
 import youtubeIcon from '../assets/icons/youtube.png';
 import footerImage from '../assets/images/fouter/7.png'; // your custom footer image
-
+import NewsletterSubscription from '../pages/home/NewsletterSubscription'; // adjust the path if needed
+import BinayahContactBar from '../pages/home/BinayahContactBar'; // adjust the path if needed
 const Footer = () => {
   return (
+    <>
+      <NewsletterSubscription />
+      <BinayahContactBar />
+    
     <footer className="bg-[#5F0F40] text-white px-6 py-10 text-sm">
       <div className="max-w-7xl mx-auto">
 
@@ -144,6 +149,7 @@ const Footer = () => {
         <p className="text-xs text-center mt-4">© sfs real estate Properties - All rights reserved</p>
       </div>
     </footer>
+    </>
   );
 };
 
