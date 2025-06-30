@@ -29,6 +29,13 @@ const pages = [
     submenu: [
       { name: "Apartments for Sale", link: "/for-sale/apartments" },
       { name: "Townhouses for Sale", link: "/for-sale/townhouses" },
+      { name: "Penthouses for Sale", link: "/for-sale/penthouses" },
+      { name: "Offices for Sale", link: "/for-sale/offices" },
+      { name: "Duplexes for Sale", link: "/for-sale/duplexes" },
+      { name: "Villas for Sale", link: "/for-sale/villas" },
+      { name: "Warehouse for Sale", link: "/for-sale/warehouse" },
+      { name: "Staff Accommodation for Sale", link: "/for-sale/staff-accommodation" },
+      { name: "Land for Sale", link: "/for-sale/land" },
     ],
   },
   {

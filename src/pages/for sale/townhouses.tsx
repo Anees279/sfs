@@ -5,7 +5,7 @@ const Townhouses = () => {
     <>
     
     <div className="px-8 sm:px-6 py-6 max-w-screen-lg mx-auto text-justify">
-      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4]">
+      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4] tracking-tight">
         Townhouses for Sale
       </h1>
       <p>
@@ -26,7 +26,7 @@ const Townhouses = () => {
         idiosyncratic designs and diverse amenities, capturing the essence of
         Dubai’s thriving real estate landscape.
       </p>
-      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4]">
+      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4] tracking-tight">
         Emaar South: Premier Townhouses near Dubai South Maktoum International
         Airport
       </h1>
@@ -44,7 +44,7 @@ const Townhouses = () => {
         Mall of the Emirates, lush gardens, serene ponds, and expansive golf
         links, all reachable within a convenient thirty- five-minute commute.
       </p>
-      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4]">
+      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4] tracking-tight">
         Town Square: Family-Centric Living Across from Mira
       </h1>
       <p>
@@ -58,7 +58,7 @@ const Townhouses = () => {
         is an ideal choice for families looking to buy or rent a townhouse in
         Dubai.
       </p>
-      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4]">
+      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4] tracking-tight">
         Jumeirah Village Circle: Ideal Investment with a 6% ROI
       </h1>
       <p>
@@ -70,7 +70,7 @@ const Townhouses = () => {
         year, offering a range of two to five-bedroom townhouses suitable for
         both small and sizable families.
       </p>
-      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4]">
+      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4] tracking-tight">
         DAMAC Lagoons Townhouses: Exceptional Living Spaces
       </h1>
       SFS Real Estate showcases exclusive apartments for sale in Dubai’s most
@@ -79,7 +79,7 @@ const Townhouses = () => {
       sports-centric Dubai Sports City, we offer a range of options for you to
       choose from.
       <p></p>
-      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4]">
+      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4] tracking-tight">
         Dubai’s Vibrant Lifestyle:
       </h1>
       <p>
@@ -90,7 +90,7 @@ const Townhouses = () => {
         feature is the Lazy River, a large artificial water lagoon. Townhouses
         for sale start at AED 1.53 million.
       </p>
-      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4]">
+      <h1 className="mb-6 text-[32px] leading-[45px] font-normal align-middle capitalize text-[#5F0F40] font-[Font_4] tracking-tight">
         Dubailand: Prime Investment Opportunity in a Vast Community
       </h1>
       <p>
