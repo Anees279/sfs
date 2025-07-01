@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import {
   AppBar,
@@ -12,6 +13,10 @@ import {
   Menu,
   MenuItem,
   Typography,
+  Divider,
+  List,
+  ListItem,
+  ListItemText
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -19,7 +24,6 @@ import PhoneIcon from "../assets/images/Container.png"; // Local image
 import img from "../assets/images/7 - Copy 1.png";
 import { keyframes } from "@mui/system";
 import { useIsMainHome } from "../hooks/useIsMainHome";
-
 
 const pages = [
   { name: "Home", link: "/" },
@@ -32,7 +36,6 @@ const pages = [
       { name: "Penthouses for Sale", link: "/for-sale/penthouses" },
       { name: "Offices for Sale", link: "/for-sale/offices" },
       { name: "Duplexes for Sale", link: "/for-sale/duplexes" },
-      // { name: "Villas for Sale", link: "/for-sale/villas" },
       { name: "Warehouse for Sale", link: "/for-sale/warehouse" },
       { name: "Staff Accommodation for Sale", link: "/for-sale/staff-accommodation" },
       { name: "Land for Sale", link: "/for-sale/land" },
@@ -43,8 +46,9 @@ const pages = [
     name: "For Rent",
     link: "/for-rent",
     submenu: [
-      { name: "Short Term", link: "/for-rent/short-term" },
-      { name: "Long Term", link: "/for-rent/long-term" },
+      { name: "Villas For Rent", link: "/for-rent/Villas-for-rent" },
+      { name: "Apartments for Rent", link: "/for-rent/apartments" },
+      { name: "Officesfor Rent", link: "/for-rent/Offices" },
     ],
   },
   {
@@ -83,30 +87,14 @@ function HomeHero() {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const [anchorEls, setAnchorEls] = React.useState<
-    Record<string, HTMLElement | null>
-  >({});
-  const [openSubmenus, setOpenSubmenus] = React.useState<
-    Record<string, boolean>
-  >(() =>
-    pages.reduce((acc, page) => {
-      if (page.submenu) acc[page.name] = false;
-      return acc;
-    }, {} as Record<string, boolean>)
+  const [anchorEls, setAnchorEls] = React.useState<Record<string, HTMLElement | null>>({});
+  const [openSubmenus, setOpenSubmenus] = React.useState<Record<string, boolean>>(
+    () =>
+      pages.reduce((acc, page) => {
+        if (page.submenu) acc[page.name] = false;
+        return acc;
+      }, {} as Record<string, boolean>)
   );
-
-  const handleToggleDrawer = () => setDrawerOpen((prev) => !prev);
-
-  const handleMenuOpen = (
-    event: React.MouseEvent<HTMLElement>,
-    pageName: string
-  ) => {
-    setAnchorEls((prev) => ({ ...prev, [pageName]: event.currentTarget }));
-  };
-
-  const handleMenuClose = (pageName: string) => {
-    setAnchorEls((prev) => ({ ...prev, [pageName]: null }));
-  };
 
   const handleMobileSubmenuToggle = (pageName: string) => {
     setOpenSubmenus((prev) => {
@@ -118,16 +106,30 @@ function HomeHero() {
     });
   };
 
+  const handleToggleDrawer = () => setDrawerOpen((prev) => !prev);
+
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>, pageName: string) => {
+    if (isLargeScreen) {
+      setAnchorEls((prev) => ({ ...prev, [pageName]: event.currentTarget }));
+    }
+  };
+
+  const handleMenuClose = (pageName: string) => {
+    setAnchorEls((prev) => ({ ...prev, [pageName]: null }));
+  };
+
   React.useEffect(() => {
     document.body.style.overflow = drawerOpen ? "hidden" : "auto";
   }, [drawerOpen]);
-   const isHome = useIsMainHome();
+
+  const isHome = useIsMainHome();
+
   return (
     <>
       <AppBar
         position="static"
         sx={{
-           backgroundColor: isHome ? "transparent" : "#0F4C5C",
+          backgroundColor: isHome ? "transparent" : "#0F4C5C",
           color: "black",
           boxShadow: "none",
           justifyContent: "center",
@@ -140,127 +142,100 @@ function HomeHero() {
           <Toolbar sx={{ width: "100%", alignItems: "center", px: 3 }}>
             <IconButton
               onClick={handleToggleDrawer}
-              sx={{
-                display: { xs: "flex", md: "none" },
-                p: 0,
-                color: "#fff",
-                mr: 2,
-                position: "absolute",
-                left: 2,
-              }}
+              sx={{ display: { xs: "flex", md: "none" }, p: 0, color: "#fff", mr: 2, position: "absolute", left: 2 }}
             >
               <MenuIcon sx={{ color: "#fff" }} />
             </IconButton>
 
-            <Box
-              component="a"
-              href="#"
-              sx={{
-                display: { xs: "flex" },
-                alignItems: "left",
-                flexGrow: 1,
-                justifyContent: {
-                  xs: "center", // ✅ center on small screens
-                  md: "space-between", // ✅ normal alignment on medium and larger screens
-                },
-              }}
-            >
-              <Box
-                sx={{
-                  height: { xs: "45px", md: "60px" },
-                  right: { xs: "50", md: "20px" },
-                }}
-              >
-                <img
-                  src={img}
-                  alt="Logo"
-                  style={{ width: "auto", height: "100%", borderRadius: 7 }}
-                />
+            <Box component="a" href="#" sx={{ display: { xs: "flex" }, alignItems: "left", flexGrow: 1, justifyContent: { xs: "center", md: "space-between" } }}>
+              <Box sx={{ height: { xs: "45px", md: "60px" }, right: { xs: "50", md: "20px" } }}>
+                <img src={img} alt="Logo" style={{ width: "auto", height: "100%", borderRadius: 7 }} />
               </Box>
             </Box>
 
-            <Box
-              sx={{
-                display: { xs: "none", md: "flex" },
-                gap: 2,
-                flexGrow: 1,
-                justifyContent: "flex-end",
-              }}
-            >
-              {pages.map((page) => {
-                if (page.submenu) {
-                  return (
-                    <React.Fragment key={page.name}>
-                      <Button
-                        sx={{ color: "#fff", fontSize: "14px" }}
-                        onClick={(e) => handleMenuOpen(e, page.name)}
-                        endIcon={<KeyboardArrowDownIcon />}
-                      >
-                        {page.name}
-                      </Button>
-                      <Menu
-                        anchorEl={anchorEls[page.name]}
-                        open={Boolean(anchorEls[page.name])}
-                        onClose={() => handleMenuClose(page.name)}
-                      >
-                        {page.submenu.map((sub) => (
-                          <MenuItem
-                            key={sub.name}
-                            onClick={() => handleMenuClose(page.name)}
-                            component="a"
-                            href={sub.link}
-                          >
-                            {sub.name}
-                          </MenuItem>
-                        ))}
-                      </Menu>
-                    </React.Fragment>
-                  );
-                }
-                return (
+            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2, flexGrow: 1, justifyContent: "flex-end" }}>
+              {pages.map((page) => (
+                <Box
+                  key={page.name}
+                  sx={{
+                    position: "relative",
+                    "&:hover .submenu": {
+                      display: isLargeScreen ? "block" : "none",
+                    },
+                  }}
+                >
                   <Button
-                    key={page.name}
-                    sx={{ color: "#fff" }}
-                    href={page.link}
+                    sx={{ color: "#fff", fontSize: "14px" }}
+                    onMouseEnter={(e) => handleMenuOpen(e, page.name)}
+                    endIcon={page.submenu ? <KeyboardArrowDownIcon /> : null}
+                    href={!page.submenu ? page.link : undefined}
                   >
                     {page.name}
                   </Button>
-                );
-              })}
+{page.submenu && (
+
+<Menu
+  className="submenu"
+  anchorEl={anchorEls[page.name]}
+  open={Boolean(anchorEls[page.name])}
+  onClose={() => handleMenuClose(page.name)}
+  anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+  transformOrigin={{ vertical: "top", horizontal: "left" }}
+  PaperProps={{
+    sx: {
+      backgroundColor: "#0F4C5C",
+      mt: 4,
+      px: 1,
+    },
+  }}
+  MenuListProps={{
+    onMouseEnter: () => {
+      if (anchorEls[page.name]) {
+        handleMenuOpen({ currentTarget: anchorEls[page.name] } as React.MouseEvent<HTMLElement>, page.name);
+      }
+    },
+    onMouseLeave: () => handleMenuClose(page.name),
+  }}
+>
+  {page.submenu.map((sub, index) => (
+    <React.Fragment key={sub.name}>
+      <MenuItem
+        component="a"
+        href={sub.link}
+        sx={{ color: "#fff" }}
+        onClick={() => handleMenuClose(page.name)}
+      >
+        {sub.name}
+      </MenuItem>
+
+      {/* Divider between items except after last */}
+      {index < page.submenu.length - 1 && (
+        <Divider sx={{ borderColor: "#ffffff30", my: 0.5 }} />
+      )}
+    </React.Fragment>
+  ))}
+</Menu>
+
+)}
+                </Box>
+              ))}
               <Box sx={{ display: "flex", alignItems: "center", gap: 1.2 }}>
-                <Box
-                  component="img"
-                  src={PhoneIcon}
-                  alt="Phone Icon"
-                  sx={{
-                    width: 24,
-                    height: 24,
-                    animation: `${slide} 1.5s ease-in-out infinite`,
-                  }}
-                />
-                <Typography
-                  sx={{
-                    fontSize: "14px",
-                    fontWeight: 500,
-                    color: "#fff",
-                    whiteSpace: "nowrap",
-                  }}
-                >
+                <Box component="img" src={PhoneIcon} alt="Phone Icon" sx={{ width: 24, height: 24, animation: `${slide} 1.5s ease-in-out infinite` }} />
+                <Typography sx={{ fontSize: "14px", fontWeight: 500, color: "#fff", whiteSpace: "nowrap" }}>
                   +971 504805436
                 </Typography>
               </Box>
             </Box>
           </Toolbar>
         </Container>
-      </AppBar>
 
-      <Drawer
+             <Drawer
         anchor="left"
         open={drawerOpen}
         onClose={handleToggleDrawer}
         PaperProps={{
           sx: {
-            backgroundColor: "#fff",
+            backgroundColor: "#0F4C5C",
             width: "100%",
             mt: "90px",
             boxShadow: "none",
@@ -299,7 +274,7 @@ function HomeHero() {
                     fullWidth
                     sx={{
                       justifyContent: "flex-start",
-                      color: "#666",
+                      color: "#fff",
                       pl: 3,
                       fontSize: "13px",
                     }}
@@ -328,12 +303,13 @@ function HomeHero() {
               }}
             />
             <Typography sx={{ fontSize: "14px", fontWeight: 500 }}>
-              +971 54 998 8811
+              +971 504805436
             </Typography>
           </Box>
         </Box>
       </Drawer>
 
+      </AppBar>
       <hr style={{ width: "100%", border: "0.1px solid #ddd", margin: 0 }} />
     </>
   );
