@@ -18,8 +18,8 @@ const BinayahContactBar = () => {
   SFS Real Estate Mezzanine Floor Liberty Building - Al Quoz 3 Sheikh Zayed Rd - Dubai
 </h1>
 
-       <h1 className="font-[Font 4] font-[400] text-[20px] leading-[24px] tracking-[0%] text-center align-middle capitalize">
-  +971 4 243 8479 | +971 54 998 8811 | info@binayah.com
+       <h1 className="font-[Font 4] font-[400] text-[20px] leading-[24px] tracking-[0%] text-center align-middle ">
+  +971 504805436 | +971 504805436  | sfs@sfsintrealestate
 </h1>
 <p>
   SFS Real Estate is Registered Under the Real Estate Regulation Authority of Dubai - UAE, Registration No. 1162

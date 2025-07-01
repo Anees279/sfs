@@ -32,10 +32,11 @@ const pages = [
       { name: "Penthouses for Sale", link: "/for-sale/penthouses" },
       { name: "Offices for Sale", link: "/for-sale/offices" },
       { name: "Duplexes for Sale", link: "/for-sale/duplexes" },
-      { name: "Villas for Sale", link: "/for-sale/villas" },
+      // { name: "Villas for Sale", link: "/for-sale/villas" },
       { name: "Warehouse for Sale", link: "/for-sale/warehouse" },
       { name: "Staff Accommodation for Sale", link: "/for-sale/staff-accommodation" },
       { name: "Land for Sale", link: "/for-sale/land" },
+      { name: "Luxury Properties", link: "/for-sale/luxury-properties" },
     ],
   },
   {
@@ -245,7 +246,7 @@ function HomeHero() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  +971 54 998 8811
+                  +971 504805436
                 </Typography>
               </Box>
             </Box>
