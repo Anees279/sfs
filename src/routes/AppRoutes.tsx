@@ -16,6 +16,10 @@ const WarehouseForSale = lazy(() => import("../pages/for sale/wherehouseForSale"
 const StaffAccommodationForSale = lazy(() => import("../pages/for sale/StaffAccommodationForSale"));
 const LandForSale = lazy(() => import("../pages/for sale/landForSale"));
 const LuxuryProperties = lazy(() => import("../pages/for sale/LuxuryPropertie"));
+const Villas =lazy(()=> import("../pages/For rent/villasForRent"))
+const AparmentForRent =lazy(()=> import("../pages/For rent/appartmentForRent"))
+const OffSure = lazy(() => import("../pages/offSure/offsure"));
+
 export const Root = () => {
   return (
     <BrowserRouter>
@@ -44,6 +48,10 @@ const AppRoutesContent = () => {
           <Route path="/for-sale/staff-accommodation" element={<StaffAccommodationForSale />} />
           <Route path="/for-sale/land" element={<LandForSale />} />
           <Route path="/for-sale/luxury-properties" element={<LuxuryProperties />} />
+          <Route path="/for-rent/Villas-for-rent" element={<Villas/>}></Route>
+          <Route path="/for-rent/apartments" element={<AparmentForRent/>}></Route>
+          <Route path="/off-plan-properties-dubai" element={<OffSure />} />
+
           {/* Add more routes as needed */}
         {/* Add more routes as needed */}
       </Routes>

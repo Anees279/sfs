@@ -46,7 +46,6 @@ const pages = [
     name: "For Rent",
     link: "/for-rent",
     submenu: [
-      { name: "Villas For Rent", link: "/for-rent/Villas-for-rent" },
       { name: "Apartments for Rent", link: "/for-rent/apartments" },
       { name: "Officesfor Rent", link: "/for-rent/Offices" },
     ],
@@ -55,7 +54,7 @@ const pages = [
     name: "Off Plan Properties",
     link: "/off-plan",
     submenu: [
-      { name: "Developers", link: "/off-plan/developers" },
+      { name: "Off Plan Properties Dubai", link: "/off-plan-properties-dubai" },
       { name: "Projects", link: "/off-plan/projects" },
     ],
   },
@@ -149,7 +148,7 @@ function HomeHero() {
 
             <Box component="a" href="#" sx={{ display: { xs: "flex" }, alignItems: "left", flexGrow: 1, justifyContent: { xs: "center", md: "space-between" } }}>
               <Box sx={{ height: { xs: "45px", md: "60px" }, right: { xs: "50", md: "20px" } }}>
-                <img src={img} alt="Logo" style={{ width: "auto", height: "100%", borderRadius: 7 }} />
+                <img src={img} alt="Logo" style={{ width: "auto", height: "100%", borderRadius: 0 }} />
               </Box>
             </Box>
 
