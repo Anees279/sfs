@@ -55,7 +55,6 @@ const pages = [
     link: "/off-plan",
     submenu: [
       { name: "Off Plan Properties Dubai", link: "/off-plan-properties-dubai" },
-      { name: "Projects", link: "/off-plan/projects" },
     ],
   },
   {
