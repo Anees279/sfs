@@ -23,8 +23,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PhoneIcon from "../assets/images/Container.png"; // Local image
 import img from "../assets/images/7 - Copy 1.png";
 import { keyframes } from "@mui/system";
-import { useIsMainHome } from "../hooks/useIsMainHome";
-
+import  useHideOnRoutes from "../hooks/useHideOnRoutes";
+import { useTransparentNavbar } from '../hooks/bgtransparent';
 const pages = [
   { name: "Home", link: "/" },
   {
@@ -47,7 +47,7 @@ const pages = [
     link: "/for-rent",
     submenu: [
       { name: "Apartments for Rent", link: "/for-rent/apartments" },
-      { name: "Officesfor Rent", link: "/for-rent/Offices" },
+      { name: "Villas for Rent", link: "/for-rent/villas-for-rent" },
     ],
   },
   {
@@ -69,7 +69,7 @@ const pages = [
     name: "Services",
     link: "/services",
     submenu: [
-      { name: "Web Development", link: "/services/web" },
+      { name: "Property Management Dubai", link: "/property-management-dubai" },
       { name: "App Development", link: "/services/app" },
     ],
   },
@@ -120,14 +120,15 @@ function HomeHero() {
     document.body.style.overflow = drawerOpen ? "hidden" : "auto";
   }, [drawerOpen]);
 
-  const isHome = useIsMainHome();
-
+  const isHome = useHideOnRoutes();
+const isTransparent = useTransparentNavbar();
   return (
     <>
       <AppBar
         position="static"
         sx={{
-          backgroundColor: isHome ? "transparent" : "#0F4C5C",
+          // backgroundColor: isHome ? "transparent" : "#0F4C5C",
+          backgroundColor: isTransparent ? "transparent" : "#0F4C5C",
           color: "black",
           boxShadow: "none",
           justifyContent: "center",

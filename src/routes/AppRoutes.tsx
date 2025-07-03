@@ -4,7 +4,7 @@ import ResponsiveRootsBar from "../components/navBar";
 import { MainHome } from "../layouts/mainHome";
 import Footer from "../components/Footer";
 import FeaturedListings from "../pages/home/FeaturedListings";
-import { useIsMainHome } from "../hooks/useIsMainHome";
+import  useHideOnRoutes  from "../hooks/useHideOnRoutes";
 import SearchBar from '../components/SearchBar'
 
 const Apartments = lazy(() => import("../layouts/apartment"));
@@ -19,6 +19,7 @@ const LuxuryProperties = lazy(() => import("../pages/for sale/LuxuryPropertie"))
 const Villas =lazy(()=> import("../pages/For rent/villasForRent"))
 const AparmentForRent =lazy(()=> import("../pages/For rent/appartmentForRent"))
 const OffSure = lazy(() => import("../pages/offSure/offsure"));
+const PropertyManagement = lazy(() => import("../pages/services/propertyManagemet"));
 
 export const Root = () => {
   return (
@@ -29,12 +30,14 @@ export const Root = () => {
 };
 
 const AppRoutesContent = () => {
-  const isMainHome = useIsMainHome();
+  const showComponents = useHideOnRoutes(["/property-management-dubai", "/"]);
+  const isMainHome = useHideOnRoutes(["/"]);
 
   return (
     <div>
-      {!isMainHome && <ResponsiveRootsBar/>}
-      {!isMainHome && <SearchBar />}
+      {showComponents && <ResponsiveRootsBar />}
+      {showComponents && <SearchBar />}
+   
       {/* Lazy loading the Apartments component */}
       <Routes>
         <Route path="/" element={<MainHome />} />
@@ -51,6 +54,7 @@ const AppRoutesContent = () => {
           <Route path="/for-rent/Villas-for-rent" element={<Villas/>}></Route>
           <Route path="/for-rent/apartments" element={<AparmentForRent/>}></Route>
           <Route path="/off-plan-properties-dubai" element={<OffSure />} />
+          <Route path="/property-management-dubai" element={<PropertyManagement />} />
 
           {/* Add more routes as needed */}
         {/* Add more routes as needed */}
