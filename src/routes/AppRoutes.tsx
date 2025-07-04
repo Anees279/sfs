@@ -20,7 +20,7 @@ const Villas =lazy(()=> import("../pages/For rent/villasForRent"))
 const AparmentForRent =lazy(()=> import("../pages/For rent/appartmentForRent"))
 const OffSure = lazy(() => import("../pages/offSure/offsure"));
 const PropertyManagement = lazy(() => import("../pages/services/propertyManagemet"));
-
+const InvestInDubai = lazy(() => import("../pages/services/invest_in_dubai"));
 export const Root = () => {
   return (
     <BrowserRouter>
@@ -30,13 +30,13 @@ export const Root = () => {
 };
 
 const AppRoutesContent = () => {
-  const showComponents = useHideOnRoutes(["/property-management-dubai", "/"]);
-  const isMainHome = useHideOnRoutes(["/"]);
+  const showComponents = useHideOnRoutes(["/property-management-dubai", "/",]);
+  const searchBar = useHideOnRoutes(["/property-management-dubai", "/", "/invest-in-dubai"]);
 
   return (
     <div>
       {showComponents && <ResponsiveRootsBar />}
-      {showComponents && <SearchBar />}
+      {searchBar && <SearchBar />}
    
       {/* Lazy loading the Apartments component */}
       <Routes>
@@ -55,6 +55,7 @@ const AppRoutesContent = () => {
           <Route path="/for-rent/apartments" element={<AparmentForRent/>}></Route>
           <Route path="/off-plan-properties-dubai" element={<OffSure />} />
           <Route path="/property-management-dubai" element={<PropertyManagement />} />
+          <Route path="/invest-in-dubai" element={<InvestInDubai />} />
 
           {/* Add more routes as needed */}
         {/* Add more routes as needed */}

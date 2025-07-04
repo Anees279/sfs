@@ -70,7 +70,7 @@ const pages = [
     link: "/services",
     submenu: [
       { name: "Property Management Dubai", link: "/property-management-dubai" },
-      { name: "App Development", link: "/services/app" },
+      { name: "Invest in Dubai", link: "/invest-in-dubai" },
     ],
   },
 ];

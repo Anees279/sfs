@@ -6,7 +6,9 @@ import emailIcon from "../../assets/icons/icons8-email-64.png.webp.png";
 import whatsappIcon from "../../assets/icons/whatsapp-2.png.webp.png";
 import PropertyFrom from "./propertyMnagemetFrom";
 import PropertyBenefits from "./managementService";
-
+import SnaggingOverview from "./signing"
+import PropertyFAQ from "./faqs";
+import LatestNews from "../home/LatestNews";
 const PropertyManagement = () => {
   return (
     <>
@@ -78,6 +80,10 @@ const PropertyManagement = () => {
         </div>
       </div>
       <PropertyBenefits />
+                <SnaggingOverview />
+      <PropertyFAQ />
+      <LatestNews />
+
     </>
   );
 };

@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 
 const location = useLocation();
-const hideOnRoutes = ['/property-management-dubai'];
+const hideOnRoutes = [''];
 
 {!hideOnRoutes.includes(location.pathname) && <SearchBar />}
 export const useHideOnRoutes = () => {
