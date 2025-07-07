@@ -60,10 +60,10 @@ const pages = [
   {
     name: "Dubai Communities",
     link: "/communities",
-    submenu: [
-      { name: "Downtown", link: "/communities/downtown" },
-      { name: "JVC", link: "/communities/jvc" },
-    ],
+    // submenu: [
+    //   { name: "Downtown", link: "/communities/downtown" },
+    //   { name: "JVC", link: "/communities/jvc" },
+    // ],
   },
   {
     name: "Services",
@@ -71,6 +71,8 @@ const pages = [
     submenu: [
       { name: "Property Management Dubai", link: "/property-management-dubai" },
       { name: "Invest in Dubai", link: "/invest-in-dubai" },
+      { name: "Golden Visa Dubai", link: "/golden-visa-dubai" },
+      { name: "Real Estate Marketing Dubai", link: "/real-estate-marketing-dubai" },
     ],
   },
 ];

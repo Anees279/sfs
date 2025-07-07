@@ -7,6 +7,7 @@ export const useTransparentNavbar = () => {
     '/',
     '/property-management-dubai',
     '/isHome',
+    '/golden-visa-dubai'
   ];
 
   return transparentRoutes.includes(location.pathname);

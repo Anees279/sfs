@@ -21,6 +21,7 @@ const AparmentForRent =lazy(()=> import("../pages/For rent/appartmentForRent"))
 const OffSure = lazy(() => import("../pages/offSure/offsure"));
 const PropertyManagement = lazy(() => import("../pages/services/propertyManagemet"));
 const InvestInDubai = lazy(() => import("../pages/services/invest_in_dubai"));
+const GoldenVisa = lazy(() => import("../pages/services/goldenVisa"));
 export const Root = () => {
   return (
     <BrowserRouter>
@@ -30,8 +31,8 @@ export const Root = () => {
 };
 
 const AppRoutesContent = () => {
-  const showComponents = useHideOnRoutes(["/property-management-dubai", "/",]);
-  const searchBar = useHideOnRoutes(["/property-management-dubai", "/", "/invest-in-dubai"]);
+  const showComponents = useHideOnRoutes(["/property-management-dubai", "/", "/golden-visa-dubai"]);
+  const searchBar = useHideOnRoutes(["/property-management-dubai", "/", "/invest-in-dubai" ,"/real-estate-marketing-dubai", "/golden-visa-dubai"]);
 
   return (
     <div>
@@ -56,6 +57,7 @@ const AppRoutesContent = () => {
           <Route path="/off-plan-properties-dubai" element={<OffSure />} />
           <Route path="/property-management-dubai" element={<PropertyManagement />} />
           <Route path="/invest-in-dubai" element={<InvestInDubai />} />
+          <Route path="/golden-visa-dubai" element={<GoldenVisa />} />
 
           {/* Add more routes as needed */}
         {/* Add more routes as needed */}

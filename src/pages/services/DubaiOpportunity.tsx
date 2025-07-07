@@ -1,5 +1,6 @@
 import React from "react";
-import img from "../../assets/images/Home Page/Ejari Dubai.png"; // Adjust the path as necessary
+import img from "../../assets/images/Home Page/Ejari Dubai.png"; 
+import img2 from "../../assets/images/Home Page/6 2.png"// Adjust the path as necessary
 const DubaiOpportunity = () => {
   return (
     <section className="w-full px-4 py-12 md:py-20 bg-white">
@@ -178,7 +179,7 @@ const DubaiOpportunity = () => {
           provides flexible options that support your business objectives. 
         </p>
         <h1 className="font-normal text-[32px] leading-[32px] tracking-[0%]  align-middle capitalize text-[#9A031E] mt-8 mb-4 font-['Lato']">
-           1. Mainland Setup: Access to Public-Private Partnerships
+          1. Mainland Setup: Access to Public-Private Partnerships
         </h1>
         <p>
           Setting up a mainland company in Dubai allows businesses to operate
@@ -189,7 +190,7 @@ const DubaiOpportunity = () => {
           market and offers the flexibility to expand internationally. 
         </p>
         <h1 className="font-normal text-[32px] leading-[32px] tracking-[0%]  align-middle capitalize text-[#9A031E] mt-8 mb-4 font-['Lato']">
-            2. Free Zone Setup: Tax-Free and International Trade
+        2. Free Zone Setup: Tax-Free and International Trade
         </h1>
         <p>
           Dubai has over 20 free zones, each offering specific incentives for
@@ -211,7 +212,7 @@ const DubaiOpportunity = () => {
           estate investment in Dubai:
         </p>
         <h1 className="font-normal text-[32px] leading-[32px] tracking-[0%]  align-middle capitalize text-[#9A031E] mt-8 mb-4 font-['Lato']">
-           1. Thorough Market Research
+          1. Thorough Market Research
         </h1>
         <p>
           Understanding markets is important for making proper decisions.
@@ -221,7 +222,7 @@ const DubaiOpportunity = () => {
           high return.
         </p>
         <h1 className="font-normal text-[32px] leading-[32px] tracking-[0%]  align-middle capitalize text-[#9A031E] mt-8 mb-4 font-['Lato']">
-            2. Leverage Flexible Payment Plans
+        2. Leverage Flexible Payment Plans
         </h1>
         <p>
           Dubai’s property developers offer flexible payment plans, making Dubai
@@ -230,7 +231,7 @@ const DubaiOpportunity = () => {
           thereby relieving you of any initial bulky payments. 
         </p>
         <h1 className="font-normal text-[32px] leading-[32px] tracking-[0%]  align-middle capitalize text-[#9A031E] mt-8 mb-4 font-['Lato']">
-             3. Secure Financing Options
+        3. Secure Financing Options
         </h1>
         <p>
           Dubai’s property developers offer flexible payment plans, making Dubai
@@ -303,7 +304,7 @@ const DubaiOpportunity = () => {
           that any real estate investor in Dubai can wish for.
         </p>
         <h1 className="font-normal text-[32px] leading-[32px] tracking-[0%]  align-middle capitalize text-[#9A031E] mt-8 mb-4 font-['Lato']">
-           1. Market Expertise
+          1. Market Expertise
         </h1>
         <p>
           Today, we have a large team of professional consultants who specialize
@@ -312,7 +313,7 @@ const DubaiOpportunity = () => {
           objectives, we offer you recommendations associated with your goals.
         </p>
         <h1 className="font-normal text-[32px] leading-[32px] tracking-[0%]  align-middle capitalize text-[#9A031E] mt-8 mb-4 font-['Lato']">
-             2. End-to-End Services
+        2. End-to-End Services
         </h1>
         <p>
           Providing solutions from property selection to legal support and
@@ -320,8 +321,8 @@ const DubaiOpportunity = () => {
           process in Dubai is smooth. Whether you are an old-timer or new to the
           investment arena, we have all the tools to help you.
         </p>
-        <h1 className="font-normal text-[32px] leading-[32px] tracking-[0%]  align-middle capitalize text-[#9A031E] mt-8 mb-4 font-['Lato']">
-              3. Proven Track Record
+        <h1 className="font-normal text-[32px]  text-[#9A031E] mt-8 mb-4 font-['Lato']">
+        3. Proven Track Record
         </h1>
         <p>
           Binayah Real Estate has numerous successful records that demonstrate
@@ -334,6 +335,7 @@ const DubaiOpportunity = () => {
           commercial spaces, we help you find the best opportunities in one of
           the world’s most dynamic markets.
         </p>
+        <img src={img2} alt="Ejari Dubai" className="w-[778px] h-auto mt-16 mx-auto" />
       </div>
     </section>
   );

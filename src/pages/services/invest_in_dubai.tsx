@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import BackgroundImage from "../../assets/images/Home Page/Portfolio.jpg"; // adjust path as needed
 import DubaiOpportunity from "./DubaiOpportunity"
+import FaqSection from "./faqInvest"
+import OurBlogs from "./blogs";
 const InvestInDubai = () => {
   return (
     <>
@@ -18,6 +20,8 @@ const InvestInDubai = () => {
       </div>
     </section>
     <DubaiOpportunity />
+    <FaqSection />
+    <OurBlogs />
     </>
   );
 };
